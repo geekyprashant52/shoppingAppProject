@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-size_12-of-12 wrapper">
+        <lightning-carousel>
+
+            <template if:true={carouselData} for:each={carouselData} 
+                for:item="item" for:index="index">
+               <lightning-carousel-image
+                    src={item.src}
+                    key={item.Id}
+                    class="carousel"
+                >
+                </lightning-carousel-image>
+            </template>
+        </lightning-carousel>
+    </div>
+</template>

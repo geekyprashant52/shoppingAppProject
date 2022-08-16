@@ -1,0 +1,25 @@
+<template>
+    <div class="cardWrapper">
+        <div class="leftDiv">
+            <img src={item.Image__c} alt={item.Name__c}>
+        </div>
+        <div>
+            <h2>{item.Name__c}</h2>
+                <div class="descriptionText">
+                    <template if:true={item.Description__c}>
+                        <h3>Description: <span>{item.Description__c}</span></h3>
+                    </template>
+                    <template if:false={item.Description__c}>
+                        <h3>Description: <span>Dig up some summer fun.</span></h3>
+                    </template>
+                </div>
+                <h3>Price: <span>${item.Cost__c}</span></h3>
+                <h3>Category: <span>{item.Type__c}</span></h3>
+                <h3>Rarity: <span>{item.Item_rarity__c}</span></h3>
+                <h3>Rating: <span>{item.Rating__c}</span></h3>
+        </div>
+        <div class="slds-m-top_small btnCart">
+            <lightning-button variant="brand" label="Add to cart" onclick={handleCartClick}></lightning-button>
+        </div>
+    </div>
+</template>

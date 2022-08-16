@@ -1,0 +1,37 @@
+<template>
+    <div class="cartCardWrapper slds-p-around_small">
+                    <div class="leftDiv">
+                        <img src={item.Image__c} alt={item.Name__c}>
+                    </div>
+                    <div>
+                        <h2>{item.Name__c}</h2>
+                        <div class="descriptionText">
+                            <template if:true={item.Description__c}>
+                                <h3>Description: <span>{item.Description__c}</span></h3>
+                            </template>
+                            <template if:false={item.Description__c}>
+                                <h3>Description: <span>Dig up some summer fun.</span></h3>
+                            </template>
+                        </div>
+                        <h3>Price: <span>${item.Cost__c}</span></h3>
+                        <h3>Category: <span>{item.Type__c}</span></h3>
+                        <h3>Rarity: <span>{item.Item_rarity__c}</span></h3>
+                        <h3>Rating: <span>{item.Rating__c}</span></h3>
+                        <h3>Quantity: <span>{item.itemCount__c}</span></h3>
+                        
+                    </div>
+                    <!--div class="slds-grid slds-m-top_medium">
+                        <div class="slds-col slds-text-align_center">
+                            <lightning-button variant="brand" label="-" class="slds-m-right_medium"> </lightning-button>
+                            <lightning-formatted-text value="01" class="slds-m-right_medium"></lightning-formatted-text>
+                            <lightning-button variant="brand" label="+" ></lightning-button>
+                        </div>
+                    </div-->
+                    <div class="slds-m-top_medium">
+                        <lightning-button variant="destructive" label="Remove"
+                            icon-name="utility:delete" onclick={handleDelete}>
+                        </lightning-button>
+                    </div>
+                    
+                </div>
+</template>

@@ -1,0 +1,7 @@
+.wrapper{
+    height: var(--lwc-sizeSmall, 15rem);
+}
+
+.carousel img{
+    width: 100%;
+}

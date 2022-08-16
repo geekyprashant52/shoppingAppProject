@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <lightning-datatable
+            key-field="Id"
+            data={storeDatalist}
+            columns={columns}
+            >
+        </lightning-datatable>
+        <div class="slds-m-top_medium slds-m-bottom_medium">
+            <h4>Total price: <span class="priceSpan">${finalPrice}</span></h4>
+        </div>
+        <lightning-button class="slds-m-top_medium"  variant="brand" label="Buy now" ></lightning-button>
+    </div>
+</template>

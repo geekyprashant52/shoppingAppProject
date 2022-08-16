@@ -1,0 +1,19 @@
+<template>
+    <h1 class="slds-p-around_small" >My Cart</h1>
+    <lightning-layout  multiple-rows="true">
+        <template if:true={storeDatalist} for:each={storeDatalist} for:item="item" for:index="index">
+           <lightning-layout-item  key={item.Id} size="6" medium-device-size="2" padding="around-small">
+                <c-cart-card item={item}></c-cart-card>
+           </lightning-layout-item>
+        </template>
+        <template if:true={error}>
+            <h1>Error occured: {error}</h1>
+        </template>
+    </lightning-layout>
+    <lightning-layout class="slds-m-top_medium slds-p-around_small">
+        <lightning-layout-item size="12">
+            <c-cart-table store-datalist={storeDatalist} final-price={finalPrice}></c-cart-table>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>
